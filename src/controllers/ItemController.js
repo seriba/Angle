@@ -1,5 +1,3 @@
-
-
 app
     .controller('itemIndex', function ($scope) {
 
@@ -9,8 +7,13 @@ app
         $scope.items = itemProvider.getItems();
     })
 
-    .controller('itemCreate', function ($scope) {
+    .controller('itemCreate', function ($scope, categoryProvider, itemProvider) {
+        $scope.categories = categoryProvider.getCategories();
+        $scope.items = itemProvider.getItems();
 
+        $scope.createItem = function (item) {
+            $scope.items = itemProvider.create(item);
+        }
     })
 
     .controller('itemUpdate', function ($scope) {

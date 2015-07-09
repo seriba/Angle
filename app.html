@@ -3,26 +3,18 @@
 <html>
 
     <head>
+        <link rel="stylesheet" type="text/css" href="views/stylesheets/css/style.css">
         <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+        <script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>
     </head>
 
     <body ng-app="collectify">
 
-    <div ng-controller="itemList">
-        <div ng-repeat="item in items">
-            <p decorate-item></p>
-        </div>
-    </div>
-    
-    <div ng-controller="categoryList">
-        <div ng-repeat="category in categories">
-            <p decorate-category></p>
-        </div>
-    </div>
-
+    <div ng-view></div>
 
 
     <script type="text/javascript" src="app.js"> </script>
+
     <!--Controllers -->
     <script type="text/javascript" src="src/controllers/CategoryController.js"></script>
     <script type="text/javascript" src="src/controllers/ItemController.js"></script>
@@ -30,13 +22,15 @@
     <!--DIrectives-->
     <script type="text/javascript" src="src/directives/ItemDecoratorDirective.js"></script>
     <script type="text/javascript" src="src/directives/CategoryDecoratorDirective.js"></script>
-    
-    <!--Filters-->
 
     <!--Services-->
     <script type="text/javascript" src="src/services/ItemProvider.js"></script>
     <script type="text/javascript" src="src/services/CategoryProvider.js"></script>
-    
+
+    <!--Routing-->
+    <script type="text/javascript" src="src/routers/categoryRouting.js"> </script>
+    <script type="text/javascript" src="src/routers/itemRouting.js"> </script>
+
     </body>
 
 </html>
